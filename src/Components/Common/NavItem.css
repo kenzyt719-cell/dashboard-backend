@@ -1,0 +1,30 @@
+.nav-item {
+  margin-bottom: 15px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.submenu {
+  margin-left: 40px;
+  margin-top: 6px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.submenu li {
+  padding: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}

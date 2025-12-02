@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./DashboardNav.css";
 import logo from "../../Assets/main logo nav.png";
+import NavItem from "../Common/NavItem";
 
-// استيراد كل الايقونات SVG
+
+
+// icons
 import icon1 from "../../Assets/icon1.svg";
 import icon2 from "../../Assets/icon2.svg";
 import icon3 from "../../Assets/icon3.svg";
@@ -21,16 +24,15 @@ const DashboardNav = () => {
       <img src={logo} alt="Main Logo" className="logo" />
 
       <ul>
-        <li>
-          <span><img src={icon1} alt="Dashboard" className="nav-icon" /> Dashboard</span>
-        </li>
+        <NavItem icon={icon1} label="Dashboard" />
 
-        <li>
-          <span onClick={() => setOpenProjects(!openProjects)}>
-            <img src={icon2} alt="Projects" className="nav-icon" /> Projects ▾
-          </span>
+        <NavItem
+          icon={icon2}
+          label="Projects ▾"
+          onClick={() => setOpenProjects(!openProjects)}
+        >
           {openProjects && (
-            <ul className="submenu">
+            <>
               <li>UX/UI</li>
               <li>Graphic Design</li>
               <li>Front End</li>
@@ -38,42 +40,33 @@ const DashboardNav = () => {
               <li>Filmmaking</li>
               <li>Branding</li>
               <li>3D</li>
-            </ul>
+            </>
           )}
-        </li>
+        </NavItem>
 
-        <li>
-          <span><img src={icon3} alt="Categories" className="nav-icon" /> Categories</span>
-        </li>
+        <NavItem icon={icon3} label="Categories" />
 
-        <li>
-          <span><img src={icon4} alt="Pages" className="nav-icon" /> Pages</span>
-        </li>
+        <NavItem icon={icon4} label="Pages" />
 
-        <li>
-          <span><img src={icon5} alt="Skills" className="nav-icon" /> Skills</span>
-        </li>
+        <NavItem icon={icon5} label="Skills" />
 
-        <li>
-          <span onClick={() => setOpenInbox(!openInbox)}>
-            <img src={icon6} alt="Inbox" className="nav-icon" /> Inbox ▾
-          </span>
+        <NavItem
+          icon={icon6}
+          label="Inbox ▾"
+          onClick={() => setOpenInbox(!openInbox)}
+        >
           {openInbox && (
-            <ul className="submenu">
+            <>
               <li>Messages</li>
               <li>Favorites</li>
               <li>Deleted</li>
-            </ul>
+            </>
           )}
-        </li>
+        </NavItem>
 
-        <li>
-          <span><img src={icon7} alt="Profile" className="nav-icon" /> Profile</span>
-        </li>
+        <NavItem icon={icon7} label="Profile" />
 
-        <li>
-          <span><img src={icon8} alt="Log Out" className="nav-icon" /> Log Out</span>
-        </li>
+        <NavItem icon={icon8} label="Log Out" />
       </ul>
     </nav>
   );
