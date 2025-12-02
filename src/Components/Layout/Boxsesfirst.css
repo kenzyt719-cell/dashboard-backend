@@ -1,0 +1,8 @@
+.maargleft2{
+    /* margin-left: 20%; */
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
