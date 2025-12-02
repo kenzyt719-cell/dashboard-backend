@@ -8,9 +8,9 @@ const Home = () => {
     <>
       <DashboardNav />
       <div className="maargleft">
- <h1>dihbqwhjkas</h1>
+ 
 
-
+      <Boxsesfirst /> 
       </div>
      
     </>

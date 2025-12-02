@@ -1,0 +1,36 @@
+.Boxblackleftdiv{
+    width: 658px;
+height: 345px;
+border-radius: 20.184px;
+background: #21023A;
+backdrop-filter: blur(60.552146911621094px);
+}   
+.divbox{
+   
+    padding: 15px;
+    width: 331px;
+    height: 338px;
+    border-radius: 6.236px;
+background: #21023A;
+box-shadow: 0 1.559px 4.677px 0 rgba(0, 0, 0, 0.25);
+}
+.webtir1{
+    color: #F0A830;
+font-family: Roboto;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 140%; /* 27.48px */
+}
+.styleimg{
+    width: 100%;
+}
+.webtir2{
+    margin: 15px  0px;
+  color: var(--Linear-Grey, #7B809A);
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 15.278px */
+}
