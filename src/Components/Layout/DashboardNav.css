@@ -1,0 +1,55 @@
+.dashboard-nav {
+  position: fixed; /* يثبتها في الشاشة */
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #1c003e; /* dark purple */
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0; /* ازالة أي مسافة خارجية */
+  box-sizing: border-box; /* عشان البادينج ما يأثرش على الحجم */
+  overflow-y: auto; /* لو القائمة طويلة تظهر سكرول */
+}
+
+.nav-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  margin-right: 10px;
+}
+.dashboard-nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.dashboard-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-nav ul li {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.dashboard-nav ul li span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-nav .submenu {
+  margin-top: 5px;
+  margin-left: 20px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.dashboard-nav .submenu li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}

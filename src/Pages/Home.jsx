@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import LeftNav from "../Components/Layout/LeftNav";
+import DashboardNav from "../Components/Layout/DashboardNav";
 
 const Home = () => {
     return (<>
-    <LeftNav />
-    
+    <DashboardNav />
+    <h1>dihbqwhjkas</h1>
+
 
     
     </>  );
