@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import LoginScreen from "./Pages/LoginScreen"; // ✔ added import
 
+import EditProject from "./Pages/EditProject"; // ✔ added import
 import SkillsMangment from "./Pages/SkillsMangment"; // ✔ added import
 
 const RoutingApp = () => {
@@ -10,13 +11,14 @@ const RoutingApp = () => {
     <BrowserRouter>
       <Routes>
 
-        {/* Home Page */}
-        <Route path="/" element={<Home />} />
 
-        {/* Login Page */}
-        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/" element={<LoginScreen />} />
+
+        <Route path="/Home" element={<Home />} />
 
         <Route path="/SkillsMangment" element={<SkillsMangment />} />
+
+        <Route path="/EditProject" element={<EditProject />} />
 
 
       </Routes>
