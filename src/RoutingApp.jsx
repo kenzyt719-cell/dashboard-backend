@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import LoginScreen from "./Pages/LoginScreen"; // ✔ added import
 
+import SkillsMangment from "./Pages/SkillsMangment"; // ✔ added import
+
 const RoutingApp = () => {
   return (
     <BrowserRouter>
@@ -13,6 +15,9 @@ const RoutingApp = () => {
 
         {/* Login Page */}
         <Route path="/login" element={<LoginScreen />} />
+
+        <Route path="/SkillsMangment" element={<SkillsMangment />} />
+
 
       </Routes>
     </BrowserRouter>
