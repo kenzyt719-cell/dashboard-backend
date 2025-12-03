@@ -1,0 +1,18 @@
+.buttonorg{
+    border-radius: 6.544px;
+border: 1.091px solid rgba(255, 255, 255, 0.50);
+background: #FD6F00;
+width: 99.253px;
+height: 43.628px;
+}
+.textbutton{
+   color: #FFF;
+font-family: Lufga;
+font-size: 17.451px;
+font-style: normal;
+font-weight: 400;
+
+    text-align: center;
+    align-items: center;
+    margin-top: 9px;
+}
