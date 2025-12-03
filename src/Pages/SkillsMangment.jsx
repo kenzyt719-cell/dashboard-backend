@@ -3,7 +3,7 @@ import Tittlemiddle from "../Components/Common/Tittlemiddle";
 
 const SkillsMangment = () => {
     return ( <>
-    <Tittlemiddle/>
+   <Tittlemiddle title="Skills Management" />
     </> );
 }
  

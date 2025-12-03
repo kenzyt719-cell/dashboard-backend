@@ -1,13 +1,11 @@
 import React from "react";
 import "./Tittlemiddle.css";
 
-const Tittlemiddle = () => {
+const Tittlemiddle = ({ title }) => {
   return (
-    <>
-      <div>
-        <h1 className="title" >Skills  Management</h1>
-      </div>
-    </>
+    <div>
+      <h1 className="title">{title}</h1>
+    </div>
   );
 };
 
