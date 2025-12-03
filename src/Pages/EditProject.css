@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: Lufga, sans-serif;
 }
 
 .edit-card,
@@ -15,6 +16,7 @@
   margin-bottom: 60px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: Lufga, sans-serif;
 }
 
 .label {
@@ -23,6 +25,7 @@
   margin-bottom: 10px;
   display: block;
   font-size: 16px;
+  font-family: Lufga, sans-serif;
 }
 
 .input {
@@ -34,6 +37,7 @@
   border-radius: 12px;
   font-size: 16px;
   margin-bottom: 8px;
+  font-family: Lufga, sans-serif;
 }
 
 .textarea {
@@ -46,6 +50,7 @@
   border-radius: 12px;
   font-size: 16px;
   resize: vertical;
+  font-family: Lufga, sans-serif;
 }
 
 .upload-box {
@@ -60,6 +65,7 @@
   font-size: 16px;
   margin-bottom: 10px;
   background: rgba(255, 255, 255, 0.03);
+  font-family: Lufga, sans-serif;
 }
 
 .save-btn {
@@ -73,6 +79,7 @@
   border: none;
   cursor: pointer;
   transition: 0.2s;
+  font-family: Lufga, sans-serif;
 }
 
 .save-btn:hover {
@@ -83,7 +90,10 @@
   color: white;
   font-size: 30px;
   margin-bottom: 25px;
-}.desc-container {
+  font-family: Lufga, sans-serif;
+}
+
+.desc-container {
   width: 100%;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.20);
@@ -92,6 +102,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-family: Lufga, sans-serif;
 }
 
 .desc-toolbar {
@@ -102,11 +113,13 @@
   background: rgba(255, 255, 255, 0.05);
   padding: 12px 15px;
   border-radius: 15px;
+  font-family: Lufga, sans-serif;
 }
 
 .tool-group {
   display: flex;
   gap: 10px;
+  font-family: Lufga, sans-serif;
 }
 
 .right {
@@ -123,4 +136,5 @@
   font-size: 16px;
   line-height: 1.6;
   resize: none;
+  font-family: Lufga, sans-serif;
 }
