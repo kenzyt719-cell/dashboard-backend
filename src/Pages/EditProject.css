@@ -2,5 +2,92 @@
     border-radius: 30px;
 background: #1B0333;
 width: 90%;
-height: 2332px;
+    justify-content: center;
+padding: 20px;
+
+}
+.h1proj{
+    color: #FFF;
+font-family: Lufga;
+font-size: 22px;
+font-style: normal;
+font-weight: 500;
+line-height: 100%; /* 18px */
+}
+.divclassrec{
+    width: 90%;
+height: 42px;
+border-radius: 1px;
+border: 1px solid rgba(255, 255, 255, 0.20);
+}
+.divhf{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    gap: 20px ;
+
+    display: flex;
+    flex-direction: column;
+
+}
+.divhfimg{width: 332px;
+height: 144px;
+    border: 1px dashed rgba(255, 255, 255, 0.30);
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.desc-container {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  padding: 20px;
+  background: #1B0333;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.desc-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 15px;
+  border-radius: 15px;
+}
+
+.font-size-select,
+.heading-select {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: white;
+  font-family: Lufga;
+}
+
+.tool-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.tool-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.desc-textarea {
+  width: 100%;
+  height: 220px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: Lufga;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: none;
 }
