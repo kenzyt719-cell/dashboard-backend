@@ -2,7 +2,7 @@ import React from "react";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Divboxhome from "../Components/Layout/Divboxhome";
-
+import { Link } from "react-router-dom";
 import "./SkillsMangment.css";
 
 import trash from "../Assets/trash.png";
@@ -19,23 +19,23 @@ const SkillsMangment = () => {
 
 <div className="boxses2">
 
+  <Link to="/EditProject">
+    <Divboxhome
+      title="Graphic Designer"
+      descriptionLabel="Description:"
+      descriptionText="Develop creative visual concepts and designs that strengthen brand communication across print and digital platforms."
+      icon={trash}
+    />
+  </Link>
 
-        <Divboxhome
-          title="Graphic Designer"
-          descriptionLabel="Description:"
-          descriptionText="Develop creative visual concepts and designs that strengthen brand communication across print and digital platforms."
-          icon={trash}
-        />
-     
+  <Divboxhome
+    title="UI/UX Designer"
+    descriptionLabel="Description:"
+    descriptionText="Create user-centered interfaces and interactive experiences that enhance usability and engagement."
+    icon={trash}
+  />
 
-        <Divboxhome
-          title="UI/UX Designer"
-          descriptionLabel="Description:"
-          descriptionText="Create user-centered interfaces and interactive experiences that enhance usability and engagement."
-          icon={trash}
-        />
 </div>
-
 <div className="boxses2">
         <Divboxhome
           title="Frontend Developer"

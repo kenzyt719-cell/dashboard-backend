@@ -1,22 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Kenzy.css";
+import "./Login.css";
 
-const LoginScreen = () => {
+const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Directly navigate to Home on click
     navigate("/Home");
   };
 
   return (
     <div className="container">
-      {/* Left Image Section */}
       <div className="left-section"></div>
 
-      {/* Right Form Section */}
       <div className="right-section">
         <h1 className="title">Log In</h1>
         <div className="divider"></div>
@@ -47,4 +44,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default Login;

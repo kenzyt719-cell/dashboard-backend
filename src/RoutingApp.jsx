@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Kenzy from "./Pages/Kenzy"; // ✔ added import
+import Login from "./Pages/Login"; 
 
-import EditProject from "./Pages/EditProject"; // ✔ added import
-import SkillsMangment from "./Pages/SkillsMangment"; // ✔ added import
+import EditProject from "./Pages/EditProject"; 
+import SkillsMangment from "./Pages/SkillsMangment";
 
 const RoutingApp = () => {
   return (
@@ -12,7 +12,7 @@ const RoutingApp = () => {
       <Routes>
 
 
-        <Route path="/" element={<Kenzy />} />
+        <Route path="/" element={<Login />} />
 
         <Route path="/Home" element={<Home />} />
 
