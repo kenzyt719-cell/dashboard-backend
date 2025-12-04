@@ -8,6 +8,7 @@ const Boxblackleft = () => {
     const footer = "More Details";
 
     return (
+        
         <div className='Boxblackleftdiv'>
             <img src={boxhome4} alt="boxhome4" />
             <h2 className="webtir1">{title}</h2>

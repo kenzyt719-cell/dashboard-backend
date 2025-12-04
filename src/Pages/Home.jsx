@@ -4,6 +4,8 @@ import Boxsesfirst from "../Components/Layout/Boxsesfirst";
 import Boxblackleft from "../Components/Common/Boxblackleft";
 import Projects from "../Components/Layout/Projects";
 
+import Rightbox from "../Components/Common/Rightbox";
+
 import "./Home.css";
 
 const Home = () => {
@@ -14,8 +16,11 @@ const Home = () => {
  
 
       <Boxsesfirst /> 
-
+<div>
       <Boxblackleft />
+      <Rightbox />
+</div>
+
 <Projects />
 
 
