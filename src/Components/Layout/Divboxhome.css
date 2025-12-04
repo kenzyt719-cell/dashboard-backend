@@ -8,12 +8,15 @@
 
 .divboxhome {
   width: 457px;
-  height: 242px;
+  height: 220px;
   padding: 20px;
   border-radius: 7.635px;
   background: rgba(255, 255, 255, 0.22);
 }
-
+.buttonnnn{
+    margin-left: 350px;
+    margin-top: 20px;
+}
 .text1 {
   color: #fff;
   font-family: Lufga;
@@ -30,9 +33,11 @@
 }
 .displayone{
 
-display: flex;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
 }
-/* ============ Desktop Default ============ */
+
 .dashboard-nav {
   width: 260px;
   min-height: 100vh;
@@ -87,7 +92,7 @@ display: flex;
   padding: 0;
 }
 
-/* ============ Mobile Top Bar ============ */
+
 .mobile-topbar {
   display: none;
 }
@@ -99,7 +104,7 @@ display: flex;
 }
 
 
-/* ============ RESPONSIVE ============ */
+
 @media (max-width: 820px) {
   /* Hide normal sidebar */
   .dashboard-nav {
@@ -130,9 +135,10 @@ display: flex;
     margin: 0;
   }
 
-  /* Page content shifts down */
+
   .maargleft,
   .skills-page {
     padding-top: 70px;
   }
+
 }

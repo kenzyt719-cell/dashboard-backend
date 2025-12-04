@@ -17,8 +17,10 @@ const Divboxhome = ({ title, descriptionLabel, descriptionText, icon }) => {
       </div>
 
       <h1 className="text2">{descriptionText}</h1>
-
+     <div className="buttonnnn">
       <Button />
+     </div>
+
     </div>
   );
 };
