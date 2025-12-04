@@ -1,16 +1,16 @@
 .dashboard-nav {
-  position: fixed; /* يثبتها في الشاشة */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 220px;
   height: 100vh;
-  background-color: #1c003e; /* dark purple */
+    background: #1f0038;
   color: white;
   padding: 20px;
   font-family: Arial, sans-serif;
-  margin: 0; /* ازالة أي مسافة خارجية */
-  box-sizing: border-box; /* عشان البادينج ما يأثرش على الحجم */
-  overflow-y: auto; /* لو القائمة طويلة تظهر سكرول */
+  margin: 0; 
+  box-sizing: border-box; 
+  overflow-y: auto; 
 }
 
 .nav-icon {
@@ -52,4 +52,8 @@
 .dashboard-nav .submenu li {
   margin-bottom: 10px;
   font-size: 14px;
+}
+.logo22{
+padding: 20px 20px 50px 50px ;
+
 }

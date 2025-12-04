@@ -3,6 +3,7 @@ import DashboardNav from "../Components/Layout/DashboardNav";
 import Boxsesfirst from "../Components/Layout/Boxsesfirst";
 import Boxblackleft from "../Components/Common/Boxblackleft";
 import Projects from "../Components/Layout/Projects";
+import Tittlemiddle from "../Components/Common/Tittlemiddle";
 
 import Rightbox from "../Components/Common/Rightbox";
 
@@ -12,7 +13,11 @@ const Home = () => {
   return (
     <>
       <DashboardNav />
+      
       <div className="maargleft3">
+ 
+        <Tittlemiddle title="Skills Management" />
+ 
  
 
       <Boxsesfirst /> 

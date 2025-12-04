@@ -13,6 +13,7 @@ import icon6 from "../../Assets/icon6.svg";
 import icon7 from "../../Assets/icon7.svg";
 import icon8 from "../../Assets/icon8.svg";
 
+
 const DashboardNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openProjects, setOpenProjects] = useState(false);
@@ -32,6 +33,7 @@ const DashboardNav = () => {
 
       {/* Sidebar */}
       <nav className={`dashboard-nav ${menuOpen ? "open" : "closed"}`}>
+      <img className="logo22" src={logo} alt="logo" />
         <ul>
           {/* Main Dashboard */}
           <NavItem icon={icon1} label="Dashboard" onClick={() => navigate("/Home")} />
