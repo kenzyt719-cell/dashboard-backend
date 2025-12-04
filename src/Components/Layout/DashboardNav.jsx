@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./DashboardNav.css";
 import logo from "../../Assets/main logo nav.png";
 import NavItem from "../Common/NavItem";
@@ -13,12 +14,11 @@ import icon7 from "../../Assets/icon7.svg";
 import icon8 from "../../Assets/icon8.svg";
 
 const DashboardNav = () => {
-  // حالة فتح وغلق القائمة بالكامل (للشاشات الصغيرة)
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // حالة فتح وغلق القوائم الفرعية
   const [openProjects, setOpenProjects] = useState(false);
   const [openInbox, setOpenInbox] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -33,8 +33,10 @@ const DashboardNav = () => {
       {/* Sidebar */}
       <nav className={`dashboard-nav ${menuOpen ? "open" : "closed"}`}>
         <ul>
-          <NavItem icon={icon1} label="Dashboard" />
+          {/* Main Dashboard */}
+          <NavItem icon={icon1} label="Dashboard" onClick={() => navigate("/Home")} />
 
+          {/* Projects with submenu */}
           <NavItem
             icon={icon2}
             label="Projects ▾"
@@ -42,21 +44,23 @@ const DashboardNav = () => {
           >
             {openProjects && (
               <>
-                <li>UX/UI</li>
-                <li>Graphic Design</li>
-                <li>Front End</li>
-                <li>Photography</li>
-                <li>Filmmaking</li>
-                <li>Branding</li>
-                <li>3D</li>
+                <li onClick={() => navigate("/SkillsMangment")}>UX/UI</li>
+                <li onClick={() => navigate("/EditProject")}>Graphic Design</li>
+                <li onClick={() => navigate("/Home")}>Front End</li>
+                <li onClick={() => navigate("/Home")}>Photography</li>
+                <li onClick={() => navigate("/Home")}>Filmmaking</li>
+                <li onClick={() => navigate("/Home")}>Branding</li>
+                <li onClick={() => navigate("/Home")}>3D</li>
               </>
             )}
           </NavItem>
 
-          <NavItem icon={icon3} label="Categories" />
-          <NavItem icon={icon4} label="Pages" />
-          <NavItem icon={icon5} label="Skills" />
+          {/* Other sections */}
+          <NavItem icon={icon3} label="Categories" onClick={() => navigate("/Home")} />
+          <NavItem icon={icon4} label="Pages" onClick={() => navigate("/Home")} />
+          <NavItem icon={icon5} label="Skills" onClick={() => navigate("/SkillsMangment")} />
 
+          {/* Inbox with submenu */}
           <NavItem
             icon={icon6}
             label="Inbox ▾"
@@ -64,15 +68,18 @@ const DashboardNav = () => {
           >
             {openInbox && (
               <>
-                <li>Messages</li>
-                <li>Favorites</li>
-                <li>Deleted</li>
+                <li onClick={() => navigate("/Home")}>Messages</li>
+                <li onClick={() => navigate("/Home")}>Favorites</li>
+                <li onClick={() => navigate("/Home")}>Deleted</li>
               </>
             )}
           </NavItem>
 
-          <NavItem icon={icon7} label="Profile" />
-          <NavItem icon={icon8} label="Log Out" />
+          {/* Profile */}
+          <NavItem icon={icon7} label="Profile" onClick={() => navigate("/Home")} />
+
+          {/* Log Out */}
+          <NavItem icon={icon8} label="Log Out" onClick={() => navigate("/")} />
         </ul>
       </nav>
     </>

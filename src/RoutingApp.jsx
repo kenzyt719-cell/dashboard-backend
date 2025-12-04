@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import LoginScreen from "./Pages/LoginScreen"; // ✔ added import
+import Kenzy from "./Pages/Kenzy"; // ✔ added import
 
 import EditProject from "./Pages/EditProject"; // ✔ added import
 import SkillsMangment from "./Pages/SkillsMangment"; // ✔ added import
@@ -12,7 +12,7 @@ const RoutingApp = () => {
       <Routes>
 
 
-        <Route path="/" element={<LoginScreen />} />
+        <Route path="/" element={<Kenzy />} />
 
         <Route path="/Home" element={<Home />} />
 

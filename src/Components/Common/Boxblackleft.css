@@ -1,9 +1,13 @@
 .Boxblackleftdiv{
-    width:90%;
-height: 345px;
-border-radius: 20.184px;
-background: #21023A;
-backdrop-filter: blur(60.552146911621094px);
+   
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    width: 90%;
+    /* height: 345px; */
+    border-radius: 20.184px;
+    background: #21023A;
+    backdrop-filter: blur(60.552146911621094px);backdrop-filter: blur(60.552146911621094px);
 }   
 .divbox{
    

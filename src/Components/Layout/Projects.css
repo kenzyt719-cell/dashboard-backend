@@ -1,0 +1,72 @@
+.projects-card {
+  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  background: radial-gradient(circle at top left, #3e005d, #120028);
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #6aff8e;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.projects-header {
+  display: grid;
+  grid-template-columns: 1fr 120px 180px;
+  margin: 20px 0;
+  color: #a7a7c9;
+  font-size: 14px;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 180px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+.views {
+  font-weight: 600;
+}
+
+.progress-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #a7a7c9;
+  font-size: 14px;
+}
+
+.progress {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 6px;
+  background: #3a67ff;
+  border-radius: 3px;
+}

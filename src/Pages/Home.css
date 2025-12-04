@@ -2,11 +2,25 @@ body {
   margin: 0;
   padding: 0;
 }
-.maargleft{
 
-    margin-left: 250px;
+.maargleft3 {
+  height: 100%;
+  background-image: url("../Assets/bg.png"); /* غيّري المسار حسب مكان الصورة */
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
 
-}h1,h2,h3,h4,h5,p{
-   padding: 0;
-    margin: 0;
+  margin-left: 250px !important;
+}
+
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0;
+}
+
+/* When screen is 600px or less → margin-left becomes 1px */
+@media (max-width: 820px) {
+  .maargleft3 {
+    margin-left: 0px !important;
+  }
 }
