@@ -10,7 +10,7 @@ const EditProject = () => {
       <DashboardNav />
        <div className="maargleft3">
 
-      <div className="skills-page maargleft">
+
         <Tittlemiddle title="Edit Project" />
 
         <div className="edit-container">
@@ -83,7 +83,7 @@ const EditProject = () => {
 
         </div>
       </div>
-      </div>
+
     </>
   );
 };
