@@ -11,7 +11,8 @@ const SkillsMangment = () => {
   return (
     <>
       <DashboardNav />
-      <div className="skills-page maargleft">
+           <div className="maargleft3">
+
 
         <Tittlemiddle title="Skills Management" />
        <div className="boxses">

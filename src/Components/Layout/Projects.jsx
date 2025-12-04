@@ -15,7 +15,7 @@ export default function Projects() {
 
       <div className="project-row">
         <div className="project-info">
-          <img src="/icons/xd.png" alt="xd" className="icon" />
+         
           <span>Art mentor app</span>
         </div>
         <span className="views">14,000</span>
@@ -29,7 +29,7 @@ export default function Projects() {
 
       <div className="project-row">
         <div className="project-info">
-          <img src="/icons/atlassian.png" alt="atl" className="icon" />
+        
           <span>Art mentor app</span>
         </div>
         <span className="views">3,000</span>
@@ -43,7 +43,7 @@ export default function Projects() {
 
       <div className="project-row">
         <div className="project-info">
-          <img src="/icons/slack.png" alt="slack" className="icon" />
+         
           <span>Art mentor app</span>
         </div>
         <span className="views">100</span>
@@ -57,7 +57,7 @@ export default function Projects() {
 
       <div className="project-row">
         <div className="project-info">
-          <img src="/icons/spotify.png" alt="spotify" className="icon" />
+        
           <span>Art mentor app</span>
         </div>
         <span className="views">1000</span>
@@ -71,7 +71,7 @@ export default function Projects() {
 
       <div className="project-row">
         <div className="project-info">
-          <img src="/icons/jira.png" alt="jira" className="icon" />
+          
           <span>Art mentor app</span>
         </div>
         <span className="views">400</span>
@@ -85,7 +85,7 @@ export default function Projects() {
 
       <div className="project-row">
         <div className="project-info">
-          <img src="/icons/invision.png" alt="inv" className="icon" />
+        
           <span>Art mentor app</span>
         </div>
         <span className="views">600</span>

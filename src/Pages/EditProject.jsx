@@ -8,6 +8,7 @@ const EditProject = () => {
   return (
     <>
       <DashboardNav />
+       <div className="maargleft3">
 
       <div className="skills-page maargleft">
         <Tittlemiddle title="Edit Project" />
@@ -82,9 +83,11 @@ const EditProject = () => {
 
         </div>
       </div>
+      </div>
     </>
   );
 };
+
 
 export default EditProject;
 
@@ -135,5 +138,6 @@ const DescriptionEditor = () => {
         />
       </div>
     </div>
+    
   );
 };

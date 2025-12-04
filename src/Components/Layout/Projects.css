@@ -1,10 +1,16 @@
 .projects-card {
-  width: 100%;
-  padding: 30px;
-  border-radius: 20px;
-  background: radial-gradient(circle at top left, #3e005d, #120028);
-  color: white;
-  font-family: "Inter", sans-serif;
+
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 30px;
+    border-radius: 20px;
+    background: radial-gradient(circle at top left, #3e005d, #120028);
+    color: white;
+    font-family: "Inter", sans-serif;
+
 }
 
 .title {

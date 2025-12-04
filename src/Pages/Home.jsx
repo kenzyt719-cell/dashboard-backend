@@ -16,7 +16,7 @@ const Home = () => {
  
 
       <Boxsesfirst /> 
-<div>
+<div className="twdivs">
       <Boxblackleft />
       <Rightbox />
 </div>

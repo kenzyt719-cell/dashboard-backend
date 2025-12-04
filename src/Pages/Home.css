@@ -12,7 +12,12 @@ body {
 
   margin-left: 250px !important;
 }
-
+.twdivs{
+flex-wrap: nowrap;
+    margin: 50px;
+    gap: 50px;
+    display: flex;
+}
 h1, h2, h3, h4, h5, p {
   padding: 0;
   margin: 0;
@@ -23,4 +28,9 @@ h1, h2, h3, h4, h5, p {
   .maargleft3 {
     margin-left: 0px !important;
   }
+  .twdivs{
+            justify-content: center;
+flex-wrap: wrap;
+  
+}
 }
