@@ -1,0 +1,72 @@
+.msg1 {
+  display: grid;
+  grid-template-columns: 
+    40px     
+    140px     
+    200px    
+    1fr       
+    100px     
+    30px      
+    30px;     
+  
+  align-items: center;
+  background: rgba(217, 217, 217, 0.01);
+  padding: 15px 20px;
+  border-radius: 0px;
+  color: white;
+  font-family: "Lofgaamd", sans-serif;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.msg1:hover {
+  background: linear-gradient(90deg, #5E3D90, #714FB3);
+}
+
+/* profile */
+.msg-profile {
+  width: 38px;
+  height: 38px;
+}
+
+/* name */
+.msg-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.msg-title {
+  font-size: 15px;
+  text-decoration: underline;
+  color: #d8c6ff;
+}
+
+
+.msg-preview {
+  font-size: 14px;
+  opacity: 0.8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.msg-time {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+.msg-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: 0.2s;
+}
+
+.msg-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}

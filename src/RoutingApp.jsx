@@ -7,6 +7,8 @@ import Msgsscreen from "./Pages/Msgsscreen";
 import EditProject from "./Pages/EditProject";
 import SkillsMangment from "./Pages/SkillsMangment";
 
+import ChatScreen from "./Pages/ChatScreen";
+
 const RoutingApp = () => {
   return (
     <BrowserRouter>
@@ -16,6 +18,9 @@ const RoutingApp = () => {
         <Route path="/SkillsMangment" element={<SkillsMangment />} />
         <Route path="/EditProject" element={<EditProject />} />
         <Route path="/Profile" element={<Profile />} />
+
+        <Route path="/ChatScreen" element={<ChatScreen />} />
+
         <Route path="/Msgsscreen" element={<Msgsscreen />} />
       </Routes>
     </BrowserRouter>
