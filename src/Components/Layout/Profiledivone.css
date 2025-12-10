@@ -1,0 +1,90 @@
+
+
+.profilediv {
+flex-direction: column;
+display: flex;
+justify-content: center;
+width: 100%;
+margin: auto;
+
+}
+.profileimgg{
+width: 90%;
+margin: auto;
+}
+
+
+.settings-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+}
+@import url('https://fonts.cdnfonts.com/css/lufga');
+
+* {
+  font-family: 'Lufga', sans-serif;
+}
+
+
+.settings-card {
+  
+    background: rgba(13, 0, 20, 0.95);
+    width: 290px;
+    padding: 15px 30px;
+    border-radius: 20px;
+    color: #fff;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);}
+
+/* Titles */
+.title {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.sub-title {
+  color: #b9b9b9;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Toggle rows */
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18px 0;
+  font-size: 15px;
+}
+
+/* Toggle style */
+.toggle {
+  width: 50px;
+  height: 22px;
+}
+
+/* Arrow rows */
+.row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.row:hover {
+  opacity: 0.8;
+}
+
+.arrow {
+  font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .settings-card {
+    width: 100%;
+  }
+}

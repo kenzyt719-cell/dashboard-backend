@@ -5,7 +5,7 @@ import Button from "../Common/Button";
 const Divboxhome = ({ title, descriptionLabel, descriptionText, icon }) => {
   return (
     <div className="divboxhome">
-      <div className="top-row">
+      <div className="top-row styletrash ">
         <div className="displayone">
           <h1 className="text1">{title}</h1>
           <h1 className="text1">{descriptionLabel}</h1>

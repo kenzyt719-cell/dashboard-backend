@@ -5,7 +5,10 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
-
+.styletrash {
+    gap: 290px;
+    display: flex;
+}
 .divboxhome {
   width: 457px;
   height: 220px;
@@ -59,7 +62,7 @@
   padding: 0;
 }
 
-/* ============ Mobile Top Bar ============ */
+
 .mobile-topbar {
   display: none;
 }
@@ -70,7 +73,7 @@
   cursor: pointer;
 }
 
-/* ============ Desktop Default ============ */
+
 .dashboard-nav {
   width: 260px;
   min-height: 100vh;
@@ -116,7 +119,7 @@
     transform: translateX(0);
   }
 
-  /* Mobile top bar visible */
+
   .mobile-topbar {
     display: flex;
     justify-content: space-between;
@@ -126,7 +129,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 95%;
     z-index: 1000;
   }
 

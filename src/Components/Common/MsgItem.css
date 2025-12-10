@@ -1,0 +1,73 @@
+.msg1 {
+  display: grid;
+  grid-template-columns: 
+    40px      /* profile */
+    140px     /* name */
+    200px     /* title */
+    1fr       /* preview */
+    100px     /* time */
+    30px      /* star */
+    30px;     /* trash */
+  
+  align-items: center;
+  background: linear-gradient(90deg, #492C76, #5E3D90);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  font-family: "Lofgaamd", sans-serif;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.msg1:hover {
+  background: linear-gradient(90deg, #5E3D90, #714FB3);
+}
+
+/* profile */
+.msg-profile {
+  width: 38px;
+  height: 38px;
+}
+
+/* name */
+.msg-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* title */
+.msg-title {
+  font-size: 15px;
+  text-decoration: underline;
+  color: #d8c6ff;
+}
+
+/* preview */
+.msg-preview {
+  font-size: 14px;
+  opacity: 0.8;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* time */
+.msg-time {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* icons */
+.msg-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: 0.2s;
+}
+
+.msg-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
