@@ -37,3 +37,9 @@ font-family: Lufga;
 display: flex;
 flex-direction: column;
 }
+/* .main_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+} */

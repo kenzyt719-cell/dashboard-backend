@@ -9,7 +9,9 @@ const SeoMain = () => {
     <>
     <div className="seodivmain">
                        <Tittlemiddle title="Seo" />
-        
+        <div className="main_div">
+
+ 
         <div className="divssection">
 
   <h2 className="h1seo"  >Page title</h2>
@@ -48,6 +50,7 @@ const SeoMain = () => {
         </div>
 
         </div>
+               </div>
       
     </div>
 
