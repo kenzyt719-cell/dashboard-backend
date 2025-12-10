@@ -8,7 +8,7 @@ const ChatScreen = () => {
       <DashboardNav />
 
       <div className="chat-wrapper">
-        {/* Header */}
+
         <div className="chat-header">
           <div className="back-arrow">&#8592;</div>
 
@@ -26,7 +26,7 @@ const ChatScreen = () => {
           </div>
         </div>
 
-        {/* Messages */}
+  
         <div className="chat-body">
 
           <div className="msg-row left">

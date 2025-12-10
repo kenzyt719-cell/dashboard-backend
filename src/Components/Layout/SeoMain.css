@@ -1,0 +1,39 @@
+.seodivmain{
+    padding: 30px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+   width: 90%;
+height: 545px;
+background: #1B0333;
+}
+.h1seo{
+color: #FFF;
+font-family: Lufga;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 100%; /* 18px */
+}
+.h1seo_2{
+color: rgba(255, 255, 255, 0.91);
+font-family: Lufga;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.divseo_text1{
+   
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 90%;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.20);}
+.divssection{
+display: flex;
+flex-direction: column;
+}
