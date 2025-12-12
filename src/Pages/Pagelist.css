@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.maargleft3 {
+  height: 100%;
+  background-image: url("../Assets/bg.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+
+    padding-bottom: 80px;
+  margin-left: 250px !important;
+}
+.twdivs{
+flex-wrap: nowrap;
+    margin: 50px;
+    gap: 50px;
+    display: flex;
+}
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 820px) {
+  .maargleft3 {
+    margin-left: 0px !important;
+  }
+  .twdivs{
+            justify-content: center;
+flex-wrap: wrap;
+  
+}
+}

@@ -12,6 +12,7 @@ import ChatScreen from "./Pages/ChatScreen";
         import Blogs from "./Pages/Blogs";
         import BlogsEdit from "./Pages/BlogsEdit";
         import Pagelist from "./Pages/Pagelist";
+        import Categories from "./Pages/Categories";
 
 
 const RoutingApp = () => {
@@ -30,6 +31,7 @@ const RoutingApp = () => {
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/BlogsEdit" element={<BlogsEdit />} />
         <Route path="/Pagelist" element={<Pagelist />} />
+        <Route path="/Categories" element={<Categories />} />
 
 
 
