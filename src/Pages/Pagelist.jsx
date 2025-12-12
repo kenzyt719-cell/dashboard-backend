@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
+import AddButton from "../Components/Layout/AddButton";
 
 
 import Divboxhome from "../Components/Layout/Divboxhome";
@@ -18,6 +19,7 @@ const Pagelist= () => {
 
 
         <Tittlemiddle title="Pages" />
+        <AddButton />
        <div className="boxses">
 
 <div className="boxses2">
