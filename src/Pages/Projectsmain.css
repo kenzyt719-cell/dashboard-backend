@@ -1,0 +1,106 @@
+/* Projectsmain.css */
+
+/* General body spacing inside the component */
+.maargleft3 {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+}
+
+/* Title middle styling */
+.tittlemiddle {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+/* ProjectTable wrapper styling */
+.project-table-container {
+  overflow-x: auto;
+  margin-bottom: 40px;
+}
+
+/* Table styling */
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.project-table th,
+.project-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.project-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.project-table tr:hover {
+  background-color: #fafafa;
+}
+
+/* Status badges */
+.status-published {
+  color: #0a8a0a;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: #e6f4ea;
+  display: inline-block;
+}
+
+.status-unpublished {
+  color: #c00;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: #fdecea;
+  display: inline-block;
+}
+
+/* Project image */
+.project-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* SEO section spacing */
+.seo-main {
+  margin-top: 40px;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+  .maargleft3 {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 15px;
+  }
+
+  .tittlemiddle {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .project-table th,
+  .project-table td {
+    padding: 8px 10px;
+  }
+
+  .project-image {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,4 +1,4 @@
-.line-wrapper {
+.lpe-line-wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr 2fr 1fr;
   align-items: center;
@@ -9,70 +9,58 @@
   margin-bottom: 10px;
   font-family: "Lufga", sans-serif;
   color: #fff;
-
   transition: 0.3s ease;
 }
 
-/* LEFT SECTION */
-.left-section {
+.lpe-left-section {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* STATUS DOT */
-.status-dot {
+.lpe-status-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
 }
+.lpe-pub { background: #00d65c; }
+.lpe-unpub { background: #a0a0a0; }
 
-.pub {
-  background: #00d65c;
-}
-.unpub {
-  background: #a0a0a0;
-}
+.lpe-status-text { font-size: 14px; }
+.lpe-pub-text { color: #00d65c; }
+.lpe-unpub-text { color: #c9c9c9; }
 
-.status-text {
-  font-size: 14px;
-}
-
-.pub-text {
-  color: #00d65c;
-}
-.unpub-text {
-  color: #c9c9c9;
-}
-
-/* IMAGE BOX */
-.image-box {
+.lpe-image-box {
   width: 55px;
   height: 55px;
   background: #d9d9d9;
   border-radius: 6px;
   overflow: hidden;
 }
-
-.image-box img {
+.lpe-image-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+.lpe-no-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 12px;
+  color: #666;
+}
 
-.line-id,
-.line-tag,
-.line-desc {
+.lpe-line-id,
+.lpe-line-tag,
+.lpe-line-desc {
   font-size: 16px;
   text-transform: capitalize;
 }
 
-.actions {
-  display: flex;
-  gap: 10px;
-}
+.lpe-actions { display: flex; gap: 10px; }
 
-.btn-action {
+.lpe-btn-action {
   width: 40px;
   height: 40px;
   border-radius: 10px;
@@ -82,59 +70,15 @@
   align-items: center;
   justify-content: center;
 }
+.lpe-btn-action img { width: 18px; }
+.lpe-delete { background: #ff5a5a; }
 
-.btn-action img {
-  width: 18px;
-}
-
-.delete {
-  background: #ff5a5a;
-}
-
-/* ------------------------------------------
-   📱 MOBILE VIEW — PERFECT FOR 600px & BELOW
-------------------------------------------- */
 @media (max-width: 600px) {
-  .line-wrapper {
-    /* Make items stack */
-    grid-template-columns: 1fr;
-
-    padding: 15px;
-    row-gap: 12px;
-  }
-
-  /* Left section: image under status */
-  .left-section {
-    justify-content: flex-start;
-    gap: 15px;
-  }
-
-  .status-text {
-    font-size: 13px;
-  }
-
-  .image-box {
-    width: 65px;
-    height: 65px;
-  }
-
-  /* ID, TAG, DESC: stack with good spacing */
-  .line-id,
-  .line-tag,
-  .line-desc {
-    font-size: 15px;
-    padding-left: 5px;
-    opacity: 0.9;
-  }
-
-  /* Buttons centered */
-  .actions {
-    justify-content: flex-start;
-    gap: 15px;
-  }
-
-  .btn-action {
-    width: 38px;
-    height: 38px;
-  }
+  .lpe-line-wrapper { grid-template-columns: 1fr; padding: 15px; row-gap: 12px; }
+  .lpe-left-section { justify-content: flex-start; gap: 15px; }
+  .lpe-status-text { font-size: 13px; }
+  .lpe-image-box { width: 65px; height: 65px; }
+  .lpe-line-id, .lpe-line-tag, .lpe-line-desc { font-size: 15px; padding-left: 5px; opacity: 0.9; }
+  .lpe-actions { justify-content: flex-start; gap: 15px; }
+  .lpe-btn-action { width: 38px; height: 38px; }
 }

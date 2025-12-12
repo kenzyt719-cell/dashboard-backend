@@ -11,6 +11,7 @@ import ChatScreen from "./Pages/ChatScreen";
         import Addproject from "./Pages/Addproject";
         import Blogs from "./Pages/Blogs";
         import BlogsEdit from "./Pages/BlogsEdit";
+        import Pagelist from "./Pages/Pagelist";
 
 
 const RoutingApp = () => {
@@ -28,6 +29,7 @@ const RoutingApp = () => {
         <Route path="/Addproject" element={<Addproject />} />
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/BlogsEdit" element={<BlogsEdit />} />
+        <Route path="/Pagelist" element={<Pagelist />} />
 
 
 

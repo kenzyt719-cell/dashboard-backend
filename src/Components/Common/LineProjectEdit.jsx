@@ -1,7 +1,6 @@
 import React from "react";
 import edit from "../../Assets/edit.svg";
 import trash from "../../Assets/trash.svg";
-
 import "./LineProjectEdit.css";
 
 export default function LineProjectEdit({
@@ -12,36 +11,37 @@ export default function LineProjectEdit({
   description = "-",
 }) {
   return (
-    <div className="line-wrapper">
- 
-      <div className="left-section">
-        <div className={`status-dot ${status === "Published" ? "pub" : "unpub"}`} />
+    <div className="lpe-line-wrapper">
+      <div className="lpe-left-section">
+        <div
+          className={`lpe-status-dot ${
+            status === "Published" ? "lpe-pub" : "lpe-unpub"
+          }`}
+        />
 
-        <h5 className={`status-text ${status === "Published" ? "pub-text" : "unpub-text"}`}>
+        <h5
+          className={`lpe-status-text ${
+            status === "Published" ? "lpe-pub-text" : "lpe-unpub-text"
+          }`}
+        >
           {status}
         </h5>
 
-        <div className="image-box">
-          {image ? (
-            <img src={image} alt="preview" />
-          ) : (
-            <div className="no-image">No Image</div>
-          )}
+        <div className="lpe-image-box">
+          {image ? <img src={image} alt="preview" /> : <div className="lpe-no-image">No Image</div>}
         </div>
       </div>
 
+      <h4 className="lpe-line-id">{id}</h4>
+      <h4 className="lpe-line-tag">{tag}</h4>
+      <h4 className="lpe-line-desc">{description}</h4>
 
-      <h4 className="line-id">{id}</h4>
-      <h4 className="line-tag">{tag}</h4>
-      <h4 className="line-desc">{description}</h4>
-
-
-      <div className="actions">
-        <button className="btn-action">
+      <div className="lpe-actions">
+        <button className="lpe-btn-action">
           <img src={edit} alt="edit" />
         </button>
 
-        <button className="btn-action delete">
+        <button className="lpe-btn-action lpe-delete">
           <img src={trash} alt="delete" />
         </button>
       </div>

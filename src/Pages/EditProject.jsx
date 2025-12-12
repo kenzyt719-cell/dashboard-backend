@@ -17,44 +17,44 @@ const EditProject = () => {
 
           <div className="edit-card">
 
-            {/* Project Select */}
+  
             <label className="label">Project Select</label>
             <input className="input" type="text" />
 
-            {/* Page Title */}
+   
             <label className="label">Page Title</label>
             <input className="input" type="text" />
 
-            {/* IMAGE 1 */}
+           
             <label className="label">Image 1</label>
             <div className="upload-box">Upload Image</div>
 
-            {/* DESC 1 */}
+           
             <DescriptionEditor />
 
-            {/* Title 2 */}
+        
             <label className="label">Title 2</label>
             <input className="input" type="text" />
 
-            {/* IMAGE 2 */}
+           
             <label className="label">Image 2</label>
             <div className="upload-box">Upload Image</div>
 
-            {/* DESC 2 */}
+            
             <DescriptionEditor />
 
-            {/* Title 3 */}
+            
             <label className="label">Title 3</label>
             <input className="input" type="text" />
 
-            {/* IMAGE 3 */}
+           
             <label className="label">Image 3</label>
             <div className="upload-box">Upload Image</div>
 
-            {/* DESC 3 */}
+            
             <DescriptionEditor />
 
-            {/* Github + live link */}
+        
             <label className="label">GitHub Link</label>
             <input className="input" type="text" placeholder="github.com" />
 
@@ -64,7 +64,7 @@ const EditProject = () => {
             <button className="save-btn">Save</button>
           </div>
 
-          {/* SEO CARD */}
+        
           <div className="seo-card">
             <h2 className="seo-title">SEO</h2>
 
@@ -91,7 +91,7 @@ const EditProject = () => {
 
 export default EditProject;
 
-// ⭐ Reusable Editor Component
+
 const DescriptionEditor = () => {
   return (
     <div className="field">
