@@ -4,7 +4,9 @@ import DashboardNav from "../Components/Layout/DashboardNav";
 import ProjectTable from "../Components/Layout/ProjectTable";
 import SeoMain from "../Components/Layout/SeoMain";
 import photoprojects from "../Assets/photoprojects.svg"; 
+import { Link } from "react-router-dom";
 
+import AddButton from "../Components/Layout/AddButton";
 
 import "./Projectsmain.css";
 
@@ -53,7 +55,9 @@ const Projectsmain = () => {
 
       <div className="maargleft3">
         <Tittlemiddle title="Projects" />
-
+  <Link to="/Addproject">
+   <AddButton title="Add Project" />
+   </Link>
         <ProjectTable items={dummyItems} />
         <SeoMain />
       </div>

@@ -37,11 +37,14 @@ const DashboardNav = () => {
           {/* Main Dashboard */}
           <NavItem icon={icon1} label="Dashboard" onClick={() => navigate("/Home")} />
 
-          {/* Projects with submenu */}
+          {/* Projects */}
           <NavItem
             icon={icon2}
             label="Projects ▾"
-            onClick={() => setOpenProjects(!openProjects)}
+            onClick={() => {
+              navigate("/Projectsmain");
+              setOpenProjects(!openProjects);
+            }}
           >
             {openProjects && (
               <>
@@ -57,20 +60,17 @@ const DashboardNav = () => {
           </NavItem>
 
           {/* Other sections */}
-          <NavItem icon={icon3} label="Categories" onClick={() => navigate("/Home")} />
-
-          {/* ⭐ FIXED: Pages now opens Pagelist */}
+          <NavItem icon={icon3} label="Categories" onClick={() => navigate("/Categories")} />
           <NavItem icon={icon4} label="Pages" onClick={() => navigate("/Pagelist")} />
-
           <NavItem icon={icon5} label="Skills" onClick={() => navigate("/SkillsMangment")} />
 
-          {/* Inbox with submenu + open Msgsscreen */}
+          {/* Inbox */}
           <NavItem
             icon={icon6}
             label="Inbox ▾"
             onClick={() => {
-              navigate("/Msgsscreen");     // open Msgsscreen
-              setOpenInbox(!openInbox);    // toggle inbox submenu
+              navigate("/Msgsscreen");
+              setOpenInbox(!openInbox);
             }}
           >
             {openInbox && (
@@ -82,8 +82,8 @@ const DashboardNav = () => {
             )}
           </NavItem>
 
-          {/* Profile */}
-          <NavItem icon={icon7} label="Profile" onClick={() => navigate("/Home")} />
+          {/* ⭐ UPDATED: Profile now opens /Profile */}
+          <NavItem icon={icon7} label="Profile" onClick={() => navigate("/Profile")} />
 
           {/* Log Out */}
           <NavItem icon={icon8} label="Log Out" onClick={() => navigate("/")} />

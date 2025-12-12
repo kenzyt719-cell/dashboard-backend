@@ -19,7 +19,9 @@ const Pagelist= () => {
 
 
         <Tittlemiddle title="Pages" />
-        <AddButton />
+  <Link to="/Addproject">
+   <AddButton title="Add Page" />
+   </Link>
        <div className="boxses">
 
 <div className="boxses2">

@@ -16,7 +16,7 @@ const Home = () => {
       
       <div className="maargleft3">
  
-        <Tittlemiddle title="Skills Management" />
+        <Tittlemiddle title="Home" />
  
  
 

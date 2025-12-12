@@ -5,6 +5,7 @@ import Divboxhome from "../Components/Layout/Divboxhome";
 import { Link } from "react-router-dom";
 import trash from "../Assets/trash.png";
 import "./Categories.css";
+import AddButton from "../Components/Layout/AddButton";
 
 const Categories= () => {
   return (
@@ -14,6 +15,9 @@ const Categories= () => {
       <div className="maargleft3">
  
         <Tittlemiddle title="Categories" />
+          <Link to="/Addproject">
+   <AddButton title="Add Page" />
+   </Link>
  
  <div className="boxses">
 
