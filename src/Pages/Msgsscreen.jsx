@@ -11,7 +11,7 @@ const Msgsscreen = () => {
       <DashboardNav />
 
       <div className="maargleft3">
-        <Tittlemiddle title="Profile" />
+        <Tittlemiddle title="Messages" />
         <Msgdiv />
       </div>
     </>

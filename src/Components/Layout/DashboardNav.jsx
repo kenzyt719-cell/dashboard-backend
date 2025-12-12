@@ -13,7 +13,6 @@ import icon6 from "../../Assets/icon6.svg";
 import icon7 from "../../Assets/icon7.svg";
 import icon8 from "../../Assets/icon8.svg";
 
-
 const DashboardNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openProjects, setOpenProjects] = useState(false);
@@ -33,7 +32,7 @@ const DashboardNav = () => {
 
       {/* Sidebar */}
       <nav className={`dashboard-nav ${menuOpen ? "open" : "closed"}`}>
-      <img className="logo22" src={logo} alt="logo" />
+        <img className="logo22" src={logo} alt="logo" />
         <ul>
           {/* Main Dashboard */}
           <NavItem icon={icon1} label="Dashboard" onClick={() => navigate("/Home")} />
@@ -59,20 +58,26 @@ const DashboardNav = () => {
 
           {/* Other sections */}
           <NavItem icon={icon3} label="Categories" onClick={() => navigate("/Home")} />
-          <NavItem icon={icon4} label="Pages" onClick={() => navigate("/Home")} />
+
+          {/* ⭐ FIXED: Pages now opens Pagelist */}
+          <NavItem icon={icon4} label="Pages" onClick={() => navigate("/Pagelist")} />
+
           <NavItem icon={icon5} label="Skills" onClick={() => navigate("/SkillsMangment")} />
 
-          {/* Inbox with submenu */}
+          {/* Inbox with submenu + open Msgsscreen */}
           <NavItem
             icon={icon6}
             label="Inbox ▾"
-            onClick={() => setOpenInbox(!openInbox)}
+            onClick={() => {
+              navigate("/Msgsscreen");     // open Msgsscreen
+              setOpenInbox(!openInbox);    // toggle inbox submenu
+            }}
           >
             {openInbox && (
               <>
-                <li onClick={() => navigate("/Home")}>Messages</li>
-                <li onClick={() => navigate("/Home")}>Favorites</li>
-                <li onClick={() => navigate("/Home")}>Deleted</li>
+                <li onClick={() => navigate("/ChatScreen")}>Messages</li>
+                <li onClick={() => navigate("/ChatScreen")}>Favorites</li>
+                <li onClick={() => navigate("/ChatScreen")}>Deleted</li>
               </>
             )}
           </NavItem>
