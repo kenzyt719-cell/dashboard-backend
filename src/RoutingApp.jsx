@@ -9,6 +9,9 @@ import SkillsMangment from "./Pages/SkillsMangment";
 import Projectsmain from "./Pages/Projectsmain";
 import ChatScreen from "./Pages/ChatScreen";
         import Addproject from "./Pages/Addproject";
+        import Blogs from "./Pages/Blogs";
+        import BlogsEdit from "./Pages/BlogsEdit";
+
 
 const RoutingApp = () => {
   return (
@@ -23,6 +26,10 @@ const RoutingApp = () => {
         <Route path="/Projectsmain" element={<Projectsmain />} />
         <Route path="/Msgsscreen" element={<Msgsscreen />} />
         <Route path="/Addproject" element={<Addproject />} />
+        <Route path="/Blogs" element={<Blogs />} />
+        <Route path="/BlogsEdit" element={<BlogsEdit />} />
+
+
 
       </Routes>
     </BrowserRouter>

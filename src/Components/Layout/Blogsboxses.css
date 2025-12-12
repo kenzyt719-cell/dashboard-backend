@@ -1,0 +1,174 @@
+.maargleft2 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.styletrash {
+  gap: 290px;
+  display: flex;
+}
+
+.Blogsboxses {
+    margin: auto;
+  padding: 20px;
+  width: 457px;
+  height: 200px;
+  border-radius: 7.635px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.buttonnnn {
+  margin-left: 350px;
+  margin-top: 20px;
+}
+
+.text1 {
+  color: #fff;
+  font-family: Lufga;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text2 {
+  color: #fff;
+  font-family: Lufga;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.displayone {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+/* ------------------------- */
+/* NEW STRUCTURE CSS (title + img beside each other) */
+/* ------------------------- */
+
+.top-row-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.main-img {
+    width: 85px;
+    height: 75px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* ------------------------- */
+/* Dashboard nav (your old code) */
+/* ------------------------- */
+
+.dashboard-nav {
+  width: 260px;
+  min-height: 100vh;
+  background: #0b0b0b;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 0.3s ease;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.dashboard-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-topbar {
+  display: none;
+}
+
+.burger {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Dashboard Nav duplicate merged */
+.dashboard-nav {
+  width: 260px;
+  min-height: 100vh;
+  background: #0b0b0b;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 0.3s ease;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.dashboard-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-topbar {
+  display: none;
+}
+
+.burger {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ------------------------- */
+/* Responsive Mobile Sidebar */
+/* ------------------------- */
+@media (max-width: 820px) {
+  .dashboard-nav {
+    transform: translateX(-100%);
+    z-index: 999;
+  }
+
+  .dashboard-nav.open {
+    transform: translateX(0);
+  }
+
+  .mobile-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background: #0b0b0b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    z-index: 1000;
+  }
+
+  .logo {
+    width: 90px;
+    margin: 0;
+  }
+
+  .maargleft,
+  .skills-page {
+    padding-top: 70px;
+  }
+}
