@@ -3,9 +3,11 @@
     margin-left: 250px;
 }
 .boxses{
+
     justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .boxses2{
       flex-wrap: wrap;
@@ -20,7 +22,7 @@ margin-bottom: 50px;
 
 .maargleft3 {
   height: 100%;
-  background-image: url("../Assets/bg.png"); /* غيّري المسار حسب مكان الصورة */
+  background-image: url("../Assets/bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
