@@ -1,81 +1,81 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
 import AddButton from "../Components/Layout/AddButton";
-
-
 import Divboxhome from "../Components/Layout/Divboxhome";
 import { Link } from "react-router-dom";
-
-
 import trash from "../Assets/trash.png";
 import "./Pagelist.css";
+import { supabase } from "../supabase";
 
-const Pagelist= () => {
+const Pagelist = () => {
+  const [loading, setLoading] = useState(true);
+  const [pages, setPages] = useState([]);
+
+  useEffect(() => {
+    async function getPages() {
+      const { data, error } = await supabase
+        .from("pages_dashboard")
+        .select("*")
+        .limit(6); // ONLY 6 divs
+
+      if (error) {
+        console.error(error);
+      } else {
+        setPages(data);
+      }
+
+      setLoading(false);
+    }
+
+    getPages();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+
+  // split pages
+  const leftPages = pages.slice(0, 3);
+  const rightPages = pages.slice(3, 6);
+
   return (
     <>
       <DashboardNav />
-           <div className="maargleft3">
 
-
+      <div className="maargleft3">
         <Tittlemiddle title="Pages" />
-  <Link to="/Addproject">
-   <AddButton title="Add Page" />
-   </Link>
-       <div className="boxses">
 
-<div className="boxses2">
+        <Link to="/Addproject">
+          <AddButton title="Add Page" />
+        </Link>
 
-  <Link to="/Blogs">
-    <Divboxhome
-      title="blogs screen"
-      descriptionLabel="Description:"
-      descriptionText="Develop creative visual concepts and designs that strengthen brand communication across print and digital platforms."
-      icon={trash}
-    />
-  </Link>
+        <div className="twdivs">
+          {/* LEFT 3 */}
+          <div className="boxses2">
+            {leftPages.map((page) => (
+              <Divboxhome
+                key={page.id}
+                title={page.title}
+                descriptionLabel="Description:"
+                descriptionText={page.description}
+                icon={trash}
+              />
+            ))}
+          </div>
 
-  <Divboxhome
-    title="UI/UX Designer"
-    descriptionLabel="Description:"
-    descriptionText="Create user-centered interfaces and interactive experiences that enhance usability and engagement."
-    icon={trash}
-  />
-
-</div>
-<div className="boxses2">
-        <Divboxhome
-          title="Frontend Developer"
-          descriptionLabel="Description:"
-          descriptionText="Build responsive and dynamic web applications using HTML, CSS, JavaScript and modern frameworks."
-          icon={trash}
-        />
-
-        <Divboxhome
-          title="Photographer"
-          descriptionLabel="Description:"
-          descriptionText="Capture high-quality photos and visual content for events, brands and creative campaigns."
-          icon={trash}
-        />
-</div>
-<div className="boxses2">
-        <Divboxhome
-          title="Video Editor"
-          descriptionLabel="Description:"
-          descriptionText="Edit and assemble recorded raw footage into polished projects with motion graphics and transitions."
-          icon={trash}
-        />
-
-        <Divboxhome
-          title="Social Media Designer"
-          descriptionLabel="Description:"
-          descriptionText="Design posts, ads and creative assets that boost brand presence and engagement on social platforms."
-          icon={trash}
-        />
-</div>
-
+          {/* RIGHT 3 */}
+          <div className="boxses2">
+            {rightPages.map((page) => (
+              <Divboxhome
+                key={page.id}
+                title={page.title}
+                descriptionLabel="Description:"
+                descriptionText={page.description}
+                icon={trash}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-             </div>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
 import Divboxhome from "../Components/Layout/Divboxhome";
@@ -6,10 +6,31 @@ import { Link } from "react-router-dom";
 import trash from "../Assets/trash.png";
 import "./Categories.css";
 import AddButton from "../Components/Layout/AddButton";
+import { supabase } from "../supabase";
+
 
 const Categories= () => {
+const [loading, setLoading] = useState(true);
+  const [ Categories , setCategories ] = useState("");
+
+
+  useEffect(()=>{
+    async function getCategories(){
+      const res = await supabase.from("Categories").select("*");
+      setCategories(res.data)
+      setLoading(false);
+      // console.log(res);
+    }
+     getCategories()
+  },[]);
+  if (loading) return <p>Loading...</p>;
   return (
+  
     <>
+   
+    
+    { Categories.map ((category)=>{
+      console.log(category)})}
       <DashboardNav />
       
       <div className="maargleft3">
@@ -23,14 +44,20 @@ const Categories= () => {
 
 <div className="boxses2">
 
-  <Link to="/EditProject">
-    <Divboxhome
-      title="Graphic Designer"
+   <Link to="/EditProject">
+  {
+    Categories.map((Categorie)=>{
+      return <Divboxhome
+    
+      title={Categorie.title}
       descriptionLabel="Description:"
-      descriptionText="Develop creative visual concepts and designs that strengthen brand communication across print and digital platforms."
+      descriptionText={Categorie.project_description}
       icon={trash}
     />
+      })
+  }
   </Link>
+
 
   <Divboxhome
     title="UI/UX Designer"
