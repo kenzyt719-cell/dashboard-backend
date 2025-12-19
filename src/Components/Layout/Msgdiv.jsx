@@ -1,29 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Msgdiv.css";
 import MsgItem from "../Common/MsgItem";
 import Another from "../Common/Another";
+import { supabase } from "../../supabase"; // make sure this is correctly configured
 
 const Msgdiv = () => {
+  const [loading, setLoading] = useState(true);
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    async function getMessages() {
+      try {
+        const { data, error } = await supabase
+          .from("messages")
+          .select("*")
+          .order("id", { ascending: false }) // newest messages first
+          .limit(10); // fetch up to 10 messages
+
+        if (error) {
+          console.error("Error fetching messages:", error);
+        } else {
+          setMessages(data || []);
+        }
+      } catch (err) {
+        console.error("Unexpected error:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    getMessages();
+  }, []);
+
+  if (loading) return <p>Loading messages...</p>;
+  if (messages.length === 0) return <p>No messages available.</p>;
+
   return (
     <div className="msg-container">
+      {messages.map((msg, index) => {
+        // Use "Another" component for the 3rd message, like in your static example
+        if (index === 2) {
+          return (
+            <Another
+              key={msg.id}
+              name={msg.name}
+              title={msg.subject}  // map subject to title
+              preview={msg.msg}    // map msg to preview
+              time={msg.time || "Unknown"}
+            />
+          );
+        }
 
-      <MsgItem
-        name="Nour Nasr" 
-        title="Collaboration Request"
-        preview="Hello, I loved your portfolio and want to discuss…"
-        time="10:23 AM" 
-      />
-
-      <MsgItem name="Ali Hamed" title="Project Update" preview="The files are ready…" time="9:10 AM" />
-      <Another name="Sarah Adel" title="Design Review" preview="Can you update slide 3?" time="8:45 AM" />
-      <MsgItem name="Lina" title="Meeting Reminder" preview="Don’t forget our call…" time="Yesterday" />
-      <MsgItem name="Mostafa" title="UI Feedback" preview="The buttons look great" time="Yesterday" />
-      <MsgItem name="Omar" title="New Opportunity" preview="I want to offer you…" time="Monday" />
-      <MsgItem name="Jana" title="Thanks!" preview="Your work is amazing!" time="Sunday" />
-      <MsgItem name="Ahmed" title="Invoice" preview="Please send the invoice" time="Sunday" />
-      <MsgItem name="Mariam" title="Portfolio" preview="Can we collaborate?" time="Saturday" />
-      <MsgItem name="Hana" title="Need Help" preview="Can you fix the layout?" time="Saturday" />
-
+        return (
+          <MsgItem
+            key={msg.id}
+            name={msg.name}
+            title={msg.subject}  // map subject to title
+            preview={msg.msg}    // map msg to preview
+            time={msg.time || "Unknown"}
+          />
+        );
+      })}
     </div>
   );
 };
