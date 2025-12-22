@@ -1,6 +1,7 @@
 import React from "react";
 import edit from "../../Assets/edit.svg";
 import trash from "../../Assets/trash.svg";
+import { supabase } from "../../supabase"; // Make sure this path is correct
 import "./LineProjectEdit.css";
 
 export default function LineProjectEdit({
@@ -10,6 +11,20 @@ export default function LineProjectEdit({
   tag = "-",
   description = "-",
 }) {
+  // Function to delete a row
+  async function deleteRow(rowId) {
+    const { error } = await supabase
+      .from("projectsallllback")
+      .delete()
+      .eq("id", rowId);
+
+    if (error) {
+      console.error("Delete failed:", error);
+    } else {
+      console.log("Deleted successfully:", rowId);
+    }
+  }
+
   return (
     <div className="lpe-line-wrapper">
       <div className="lpe-left-section">
@@ -28,7 +43,11 @@ export default function LineProjectEdit({
         </h5>
 
         <div className="lpe-image-box">
-          {image ? <img src={image} alt="preview" /> : <div className="lpe-no-image">No Image</div>}
+          {image ? (
+            <img src={image} alt="preview" />
+          ) : (
+            <div className="lpe-no-image">No Image</div>
+          )}
         </div>
       </div>
 
@@ -41,7 +60,10 @@ export default function LineProjectEdit({
           <img src={edit} alt="edit" />
         </button>
 
-        <button className="lpe-btn-action lpe-delete">
+        <button
+          onClick={() => deleteRow(id)}
+          className="lpe-btn-action lpe-delete"
+        >
           <img src={trash} alt="delete" />
         </button>
       </div>

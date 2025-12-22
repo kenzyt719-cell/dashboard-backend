@@ -23,12 +23,12 @@ const Projectsmain = () => {
       if (error) {
         console.error(error);
       } else {
-        // Map data to the format ProjectTable expects
+       
         const mappedData = data.map((project) => ({
           id: project.id,
           tag: project.tag,
           description: project.description,
-          status: project.status || "Unpublished", // default if status missing
+          status: project.status || "Unpublished",
           image: photoprojects,
         }));
 
