@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
 import { supabase } from "../supabase";
-import "./Addproject.css";
+import "./Addcategory.css";
 
 const DescriptionEditor = ({ value, onChange }) => (
   <div className="field">
@@ -16,7 +16,7 @@ const DescriptionEditor = ({ value, onChange }) => (
   </div>
 );
 
-const Addproject = () => {
+const Addcategory = () => {
   const [saving, setSaving] = useState(false);
 
   const [project, setProject] = useState({
@@ -187,4 +187,4 @@ const Addproject = () => {
   );
 };
 
-export default Addproject;
+export default Addcategory;

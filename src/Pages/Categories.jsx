@@ -17,7 +17,7 @@ const Categories = () => {
       const { data, error } = await supabase
         .from("Categories")
         .select("*")
-        .limit(6); 
+        .limit(6);
 
       if (error) {
         console.error(error);
@@ -33,9 +33,13 @@ const Categories = () => {
 
   if (loading) return <p>Loading...</p>;
 
-
   const leftCategories = categories.slice(0, 3);
   const rightCategories = categories.slice(3, 6);
+
+  // handler لتحديث الـ state بعد الحذف
+  const handleDelete = (deletedId) => {
+    setCategories(categories.filter((cat) => cat.id !== deletedId));
+  };
 
   return (
     <>
@@ -52,28 +56,30 @@ const Categories = () => {
           {/* LEFT 3 */}
           <div className="boxses2">
             {leftCategories.map((category) => (
-              <Link to="/EditProject" key={category.id}>
-                <Divboxhome
-                  title={category.title}
-                  descriptionLabel="Description:"
-                  descriptionText={category.project_description}
-                  icon={trash}
-                />
-              </Link>
+              <Divboxhome
+                key={category.id}
+                id={category.id}
+                title={category.title}
+                descriptionLabel="Description:"
+                descriptionText={category.project_description}
+                icon={trash}
+                onDeleted={handleDelete}
+              />
             ))}
           </div>
 
           {/* RIGHT 3 */}
           <div className="boxses2">
             {rightCategories.map((category) => (
-              <Link to="/EditProject" key={category.id}>
-                <Divboxhome
-                  title={category.title}
-                  descriptionLabel="Description:"
-                  descriptionText={category.project_description}
-                  icon={trash}
-                />
-              </Link>
+              <Divboxhome
+                key={category.id}
+                id={category.id}
+                title={category.title}
+                descriptionLabel="Description:"
+                descriptionText={category.project_description}
+                icon={trash}
+                onDeleted={handleDelete}
+              />
             ))}
           </div>
         </div>

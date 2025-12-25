@@ -13,6 +13,8 @@ import Blogs from "./Pages/Blogs";
 import BlogsEdit from "./Pages/BlogsEdit";
 import Pagelist from "./Pages/Pagelist";
 import Categories from "./Pages/Categories";
+import Addcategory from "./Pages/Addcategory";
+
 
 const RoutingApp = () => {
   return (
@@ -31,6 +33,9 @@ const RoutingApp = () => {
         <Route path="/BlogsEdit" element={<BlogsEdit />} />
         <Route path="/Pagelist" element={<Pagelist />} />
         <Route path="/Categories" element={<Categories />} />
+        <Route path="/Addcategory" element={<Addcategory/>} />
+
+        
       </Routes>
     </BrowserRouter>
   );
