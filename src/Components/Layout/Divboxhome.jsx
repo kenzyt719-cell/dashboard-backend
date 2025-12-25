@@ -1,8 +1,10 @@
 import React from "react";
 import "./Divboxhome.css";
 import { supabase } from "../../supabase";
+import { useNavigate } from "react-router-dom";
 
 const Divboxhome = ({ title, descriptionLabel, descriptionText, icon, id, onDeleted }) => {
+  const navigate = useNavigate();
 
   const deleteCategory = async () => {
     const { error } = await supabase
@@ -10,12 +12,12 @@ const Divboxhome = ({ title, descriptionLabel, descriptionText, icon, id, onDele
       .delete()
       .eq("id", id);
 
-    if (error) {
-      console.error("Delete failed:", error.message);
-    } else {
-      console.log("Deleted successfully:", id);
-      if (onDeleted) onDeleted(id); // نحدث الـ state في الـ parent
-    }
+    if (error) console.error("Delete failed:", error.message);
+    else if (onDeleted) onDeleted(id);
+  };
+
+  const handleEdit = () => {
+    navigate(`/editcategory/${id}`);
   };
 
   return (
@@ -33,13 +35,18 @@ const Divboxhome = ({ title, descriptionLabel, descriptionText, icon, id, onDele
               alt="icon"
               className="icon-img"
               style={{ cursor: "pointer" }}
-              onClick={deleteCategory} // الحذف بالضغط على الايكون
+              onClick={deleteCategory}
             />
           )}
         </div>
       </div>
 
       <h1 className="text2">{descriptionText}</h1>
+
+      {/* زر Edit مدمج */}
+      <div className="buttonorg" onClick={handleEdit}>
+        <h3 className="textbutton">Edit</h3>
+      </div>
     </div>
   );
 };

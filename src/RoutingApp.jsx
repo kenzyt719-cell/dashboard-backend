@@ -14,7 +14,7 @@ import BlogsEdit from "./Pages/BlogsEdit";
 import Pagelist from "./Pages/Pagelist";
 import Categories from "./Pages/Categories";
 import Addcategory from "./Pages/Addcategory";
-
+import EditCategory from "./Pages/Editcategory"; // جديد
 
 const RoutingApp = () => {
   return (
@@ -23,7 +23,7 @@ const RoutingApp = () => {
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/SkillsMangment" element={<SkillsMangment />} />
-        <Route path="/edit/:id" element={<EditProject />} /> {/* رابط التعديل */}
+        <Route path="/edit/:id" element={<EditProject />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/ChatScreen" element={<ChatScreen />} />
         <Route path="/Projectsmain" element={<Projectsmain />} />
@@ -33,9 +33,8 @@ const RoutingApp = () => {
         <Route path="/BlogsEdit" element={<BlogsEdit />} />
         <Route path="/Pagelist" element={<Pagelist />} />
         <Route path="/Categories" element={<Categories />} />
-        <Route path="/Addcategory" element={<Addcategory/>} />
-
-        
+        <Route path="/Addcategory" element={<Addcategory />} />
+        <Route path="/editcategory/:id" element={<EditCategory />} /> {/* جديد */}
       </Routes>
     </BrowserRouter>
   );

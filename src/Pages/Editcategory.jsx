@@ -1,16 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
 import { supabase } from "../supabase";
-import "./Addcategory.css";
+import "./Addcategory.css"; // reuse the same CSS
 
-const Addcategory = () => {
-  const [category, setCategory] = useState({
-    title: "",
-    project_description: "",
-    thumbnail: ""
-  });
+const Editcategory = () => {
+  const { id } = useParams();
+  const [category, setCategory] = useState({ title: "", project_description: "", thumbnail: "" });
+  const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+
+  // Fetch category data
+  useEffect(() => {
+    async function fetchCategory() {
+      const { data, error } = await supabase
+        .from("Categories")
+        .select("*")
+        .eq("id", Number(id))
+        .single();
+
+      if (error) console.error(error);
+      else if (data) setCategory({
+        title: data.title || "",
+        project_description: data.project_description || "",
+        thumbnail: data.thumbnail || ""
+      });
+
+      setLoading(false);
+    }
+
+    if (id) fetchCategory();
+    else setLoading(false);
+  }, [id]);
 
   const updateField = (field, value) => {
     setCategory({ ...category, [field]: value });
@@ -24,24 +46,24 @@ const Addcategory = () => {
 
     setSaving(true);
 
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("Categories")
-      .insert([category]);
+      .update(category)
+      .eq("id", Number(id));
 
-    if (error) alert("Error adding category: " + error.message);
-    else {
-      alert("Category added successfully!");
-      setCategory({ title: "", project_description: "", thumbnail: "" });
-    }
+    if (error) alert("Error saving: " + error.message);
+    else alert("Saved successfully!");
 
     setSaving(false);
   };
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>
       <DashboardNav />
       <div className="maargleft3">
-        <Tittlemiddle title="Add Category" />
+        <Tittlemiddle title="Edit Category" />
         <div className="edit-container">
           <div className="edit-card">
             <label className="label">Thumbnail URL</label>
@@ -77,4 +99,4 @@ const Addcategory = () => {
   );
 };
 
-export default Addcategory;
+export default Editcategory;

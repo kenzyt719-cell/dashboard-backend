@@ -19,11 +19,8 @@ const Categories = () => {
         .select("*")
         .limit(6);
 
-      if (error) {
-        console.error(error);
-      } else {
-        setCategories(data);
-      }
+      if (error) console.error(error);
+      else setCategories(data);
 
       setLoading(false);
     }
@@ -36,7 +33,6 @@ const Categories = () => {
   const leftCategories = categories.slice(0, 3);
   const rightCategories = categories.slice(3, 6);
 
-  // handler لتحديث الـ state بعد الحذف
   const handleDelete = (deletedId) => {
     setCategories(categories.filter((cat) => cat.id !== deletedId));
   };
@@ -44,16 +40,13 @@ const Categories = () => {
   return (
     <>
       <DashboardNav />
-
       <div className="maargleft3">
         <Tittlemiddle title="Categories" />
-
-        <Link to="/Addproject">
+        <Link to="/Addcategory">
           <AddButton title="Add Page" />
         </Link>
 
         <div className="twdivs">
-          {/* LEFT 3 */}
           <div className="boxses2">
             {leftCategories.map((category) => (
               <Divboxhome
@@ -68,7 +61,6 @@ const Categories = () => {
             ))}
           </div>
 
-          {/* RIGHT 3 */}
           <div className="boxses2">
             {rightCategories.map((category) => (
               <Divboxhome

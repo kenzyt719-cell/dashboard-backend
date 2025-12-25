@@ -1,0 +1,140 @@
+.edit-container {
+  width: 100%;
+  padding: 50px 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Lufga, sans-serif;
+}
+
+.edit-card,
+.seo-card {
+  width: 85%;
+  background: #0d0014;
+  padding: 40px;
+  border-radius: 22px;
+  margin-bottom: 60px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: Lufga, sans-serif;
+}
+
+.label {
+  color: #c4c4c4;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 16px;
+  font-family: Lufga, sans-serif;
+}
+
+.input {
+  width: 100%;
+  padding: 15px 18px;
+  background: #14001e;
+  border: 1px solid #2e1f38;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: Lufga, sans-serif;
+}
+
+.textarea {
+  width: 100%;
+  height: 140px;
+  padding: 15px 18px;
+  background: #14001e;
+  border: 1px solid #2e1f38;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  resize: vertical;
+  font-family: Lufga, sans-serif;
+}
+
+.upload-box {
+  width: 100%;
+  height: 160px;
+  border: 2px dashed #55336b;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c4c4c4;
+  font-size: 16px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  font-family: Lufga, sans-serif;
+}
+
+.save-btn {
+  width: 220px;
+  background: #ff7a00;
+  padding: 15px 0;
+  color: white;
+  font-size: 18px;
+  border-radius: 12px;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: Lufga, sans-serif;
+}
+
+.save-btn:hover {
+  opacity: 0.85;
+}
+
+.seo-title {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-family: Lufga, sans-serif;
+}
+
+.desc-container {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  padding: 20px;
+  background: #1B0333;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: Lufga, sans-serif;
+}
+
+.desc-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 15px;
+  border-radius: 15px;
+  font-family: Lufga, sans-serif;
+}
+
+.tool-group {
+  display: flex;
+  gap: 10px;
+  font-family: Lufga, sans-serif;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.desc-textarea {
+  width: 100%;
+  height: 220px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: none;
+  font-family: Lufga, sans-serif;
+}
