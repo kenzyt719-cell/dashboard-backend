@@ -43,7 +43,7 @@ const Divboxhome = ({ title, descriptionLabel, descriptionText, icon, id, onDele
 
       <h1 className="text2">{descriptionText}</h1>
 
-      {/* زر Edit مدمج */}
+
       <div className="buttonorg" onClick={handleEdit}>
         <h3 className="textbutton">Edit</h3>
       </div>

@@ -4,7 +4,7 @@ import Tittlemiddle from "../Components/Common/Tittlemiddle";
 import Blogsboxses from "../Components/Layout/Blogsboxses";
 
 import trash from "../Assets/trash.png";
-import uiuxImg from "../Assets/uiux.png"; // <-- your main image
+import uiuxImg from "../Assets/uiux.png"; 
 import { Link } from "react-router-dom";
 
 import "./Blogs.css";

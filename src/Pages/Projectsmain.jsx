@@ -17,7 +17,7 @@ const Projectsmain = () => {
   useEffect(() => {
     async function getProjects() {
       const { data, error } = await supabase
-        .from("edit_screen") // جدول التعديل
+        .from("edit_screen") 
         .select("*");
 
       if (error) {
@@ -29,7 +29,7 @@ const Projectsmain = () => {
           description: project.description,
           status: project.status || "Unpublished",
           image: photoprojects,
-          editLink: `/edit/${project.id}`, // رابط التعديل لكل مشروع
+          editLink: `/edit/${project.id}`, 
         }));
 
         setProjects(mappedData);
@@ -54,7 +54,7 @@ const Projectsmain = () => {
           <AddButton title="Add Project" />
         </Link>
 
-        <ProjectTable items={projects} /> {/* عرض المشاريع */}
+        <ProjectTable items={projects} /> 
         <SeoMain />
       </div>
     </>

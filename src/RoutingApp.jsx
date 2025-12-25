@@ -14,7 +14,7 @@ import BlogsEdit from "./Pages/BlogsEdit";
 import Pagelist from "./Pages/Pagelist";
 import Categories from "./Pages/Categories";
 import Addcategory from "./Pages/Addcategory";
-import EditCategory from "./Pages/Editcategory"; // جديد
+import EditCategory from "./Pages/Editcategory"; 
 
 const RoutingApp = () => {
   return (
@@ -34,7 +34,7 @@ const RoutingApp = () => {
         <Route path="/Pagelist" element={<Pagelist />} />
         <Route path="/Categories" element={<Categories />} />
         <Route path="/Addcategory" element={<Addcategory />} />
-        <Route path="/editcategory/:id" element={<EditCategory />} /> {/* جديد */}
+        <Route path="/editcategory/:id" element={<EditCategory />} /> 
       </Routes>
     </BrowserRouter>
   );

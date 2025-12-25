@@ -28,7 +28,7 @@ const Msgdiv = () => {
     getMessages();
   }, []);
 
-  // ✅ DELETE MESSAGE (same logic as your project delete)
+
   async function deleteMessage(rowId) {
     const { error } = await supabase
       .from("contactus_main")

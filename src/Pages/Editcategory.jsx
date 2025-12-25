@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
 import { supabase } from "../supabase";
-import "./Addcategory.css"; // reuse the same CSS
+import "./Addcategory.css"; 
 
 const Editcategory = () => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const Editcategory = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-  // Fetch category data
+  
   useEffect(() => {
     async function fetchCategory() {
       const { data, error } = await supabase
