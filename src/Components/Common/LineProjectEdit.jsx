@@ -1,7 +1,7 @@
 import React from "react";
 import edit from "../../Assets/edit.svg";
 import trash from "../../Assets/trash.svg";
-import { supabase } from "../../supabase"; // Make sure this path is correct
+import { supabase } from "../../supabase";
 import "./LineProjectEdit.css";
 
 export default function LineProjectEdit({
@@ -11,10 +11,9 @@ export default function LineProjectEdit({
   tag = "-",
   description = "-",
 }) {
-  // Function to delete a row
   async function deleteRow(rowId) {
     const { error } = await supabase
-      .from("projectsallllback")
+      .from("edit_screen")
       .delete()
       .eq("id", rowId);
 

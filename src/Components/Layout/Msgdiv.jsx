@@ -10,27 +10,37 @@ const Msgdiv = () => {
 
   useEffect(() => {
     async function getMessages() {
-      try {
-        const { data, error } = await supabase
-          .from("contactus_main")  // جدول Contact Us
-          .select("*")
-          .order("id", { ascending: false }) // أحدث الرسائل أولًا
-          .limit(10);
+      const { data, error } = await supabase
+        .from("contactus_main")
+        .select("*")
+        .order("id", { ascending: false })
+        .limit(10);
 
-        if (error) {
-          console.error("Error fetching messages:", error);
-        } else {
-          setMessages(data || []);
-        }
-      } catch (err) {
-        console.error("Unexpected error:", err);
-      } finally {
-        setLoading(false);
+      if (!error) {
+        setMessages(data || []);
+      } else {
+        console.error(error);
       }
+
+      setLoading(false);
     }
 
     getMessages();
   }, []);
+
+  // ✅ DELETE MESSAGE (same logic as your project delete)
+  async function deleteMessage(rowId) {
+    const { error } = await supabase
+      .from("contactus_main")
+      .delete()
+      .eq("id", rowId);
+
+    if (error) {
+      console.error("Delete failed:", error);
+    } else {
+      setMessages(prev => prev.filter(msg => msg.id !== rowId));
+    }
+  }
 
   if (loading) return <p>Loading messages...</p>;
   if (messages.length === 0) return <p>No messages available.</p>;
@@ -38,15 +48,16 @@ const Msgdiv = () => {
   return (
     <div className="msg-container">
       {messages.map((msg, index) => {
-        // نستخدم Another للرسالة رقم 3 فقط (حسب المثال السابق)
         if (index === 2) {
           return (
             <Another
               key={msg.id}
+              id={msg.id}
               name={`${msg.first_name} ${msg.last_name}`}
-              title={msg.email}   // الايميل يظهر كعنوان
-              preview={msg.msg}   // الرسالة نفسها
+              title={msg.email}
+              preview={msg.msg}
               time={msg.created_at || "Unknown"}
+              onDelete={deleteMessage}
             />
           );
         }
@@ -54,10 +65,12 @@ const Msgdiv = () => {
         return (
           <MsgItem
             key={msg.id}
+            id={msg.id}
             name={`${msg.first_name} ${msg.last_name}`}
             title={msg.email}
             preview={msg.msg}
             time={msg.created_at || "Unknown"}
+            onDelete={deleteMessage}
           />
         );
       })}
@@ -66,6 +79,7 @@ const Msgdiv = () => {
 };
 
 export default Msgdiv;
+
 // import React, { useEffect, useState } from "react";
 // import "./Msgdiv.css";
 // import MsgItem from "../Common/MsgItem";
