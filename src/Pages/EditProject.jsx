@@ -1,43 +1,41 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import DashboardNav from "../Components/Layout/DashboardNav";
 import Tittlemiddle from "../Components/Common/Tittlemiddle";
-import "./EditProject.css";
 import { supabase } from "../supabase";
+import "./EditProject.css";
 
 const EditProject = () => {
+  const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    async function fetchProjects() {
-      const { data, error } = await supabase.from("edit_screen").select("*");
+    async function fetchProject() {
+      const { data, error } = await supabase
+        .from("edit_screen")
+        .select("*")
+        .eq("id", Number(id))
+        .single();
 
       if (error) {
         console.error(error);
+        alert("Project not found!");
       } else {
-        setProjects(data);
-        if (data.length > 0) setSelectedProject(data[0]); // default select first project
+        setSelectedProject(data);
       }
-
       setLoading(false);
     }
 
-    fetchProjects();
-  }, []);
+    fetchProject();
+  }, [id]);
 
   if (loading) return <p>Loading...</p>;
-
-  const handleProjectChange = (e) => {
-    const project = projects.find((p) => p.id === Number(e.target.value));
-    setSelectedProject(project);
-  };
+  if (!selectedProject) return <p>Project not found!</p>;
 
   const handleSave = async () => {
-    if (!selectedProject) return;
     setSaving(true);
-
     const { error } = await supabase
       .from("edit_screen")
       .update(selectedProject)
@@ -49,8 +47,11 @@ const EditProject = () => {
     } else {
       alert("Project saved successfully!");
     }
-
     setSaving(false);
+  };
+
+  const updateField = (field, value) => {
+    setSelectedProject({ ...selectedProject, [field]: value });
   };
 
   return (
@@ -61,35 +62,19 @@ const EditProject = () => {
 
         <div className="edit-container">
           <div className="edit-card">
-            {/* Project Select */}
-            <label className="label">Project Select</label>
-            <select
-              className="input"
-              value={selectedProject?.id || ""}
-              onChange={handleProjectChange}
-            >
-              {projects.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.Project}
-                </option>
-              ))}
-            </select>
-
             {/* Title 1 */}
             <label className="label">Title 1</label>
             <input
               className="input"
               type="text"
-              value={selectedProject?.Title1 || ""}
-              onChange={(e) =>
-                setSelectedProject({ ...selectedProject, Title1: e.target.value })
-              }
+              value={selectedProject.Title1 || ""}
+              onChange={(e) => updateField("Title1", e.target.value)}
             />
 
             {/* Image 1 */}
             <label className="label">Image 1</label>
             <div className="upload-box">
-              {selectedProject?.Image1 ? (
+              {selectedProject.Image1 ? (
                 <img
                   src={selectedProject.Image1}
                   alt="Image 1"
@@ -102,10 +87,8 @@ const EditProject = () => {
 
             {/* Description 1 */}
             <DescriptionEditor
-              description={selectedProject?.description1 || ""}
-              onChange={(desc) =>
-                setSelectedProject({ ...selectedProject, description1: desc })
-              }
+              description={selectedProject.description1 || ""}
+              onChange={(desc) => updateField("description1", desc)}
             />
 
             {/* Title 2 */}
@@ -113,16 +96,14 @@ const EditProject = () => {
             <input
               className="input"
               type="text"
-              value={selectedProject?.Title2 || ""}
-              onChange={(e) =>
-                setSelectedProject({ ...selectedProject, Title2: e.target.value })
-              }
+              value={selectedProject.Title2 || ""}
+              onChange={(e) => updateField("Title2", e.target.value)}
             />
 
             {/* Image 2 */}
             <label className="label">Image 2</label>
             <div className="upload-box">
-              {selectedProject?.img2 ? (
+              {selectedProject.img2 ? (
                 <img
                   src={selectedProject.img2}
                   alt="Image 2"
@@ -135,10 +116,8 @@ const EditProject = () => {
 
             {/* Description 2 */}
             <DescriptionEditor
-              description={selectedProject?.description2 || ""}
-              onChange={(desc) =>
-                setSelectedProject({ ...selectedProject, description2: desc })
-              }
+              description={selectedProject.description2 || ""}
+              onChange={(desc) => updateField("description2", desc)}
             />
 
             {/* Title 3 */}
@@ -146,16 +125,14 @@ const EditProject = () => {
             <input
               className="input"
               type="text"
-              value={selectedProject?.title3 || ""}
-              onChange={(e) =>
-                setSelectedProject({ ...selectedProject, title3: e.target.value })
-              }
+              value={selectedProject.title3 || ""}
+              onChange={(e) => updateField("title3", e.target.value)}
             />
 
             {/* Image 3 */}
             <label className="label">Image 3</label>
             <div className="upload-box">
-              {selectedProject?.img3 ? (
+              {selectedProject.img3 ? (
                 <img
                   src={selectedProject.img3}
                   alt="Image 3"
@@ -168,10 +145,8 @@ const EditProject = () => {
 
             {/* Description 3 */}
             <DescriptionEditor
-              description={selectedProject?.description3 || ""}
-              onChange={(desc) =>
-                setSelectedProject({ ...selectedProject, description3: desc })
-              }
+              description={selectedProject.description3 || ""}
+              onChange={(desc) => updateField("description3", desc)}
             />
 
             <button className="save-btn" onClick={handleSave} disabled={saving}>
@@ -186,7 +161,6 @@ const EditProject = () => {
 
 export default EditProject;
 
-// Description Editor Component
 const DescriptionEditor = ({ description, onChange }) => {
   return (
     <div className="field">

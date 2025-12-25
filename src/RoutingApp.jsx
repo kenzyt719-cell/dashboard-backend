@@ -8,12 +8,11 @@ import EditProject from "./Pages/EditProject";
 import SkillsMangment from "./Pages/SkillsMangment";
 import Projectsmain from "./Pages/Projectsmain";
 import ChatScreen from "./Pages/ChatScreen";
-        import Addproject from "./Pages/Addproject";
-        import Blogs from "./Pages/Blogs";
-        import BlogsEdit from "./Pages/BlogsEdit";
-        import Pagelist from "./Pages/Pagelist";
-        import Categories from "./Pages/Categories";
-
+import Addproject from "./Pages/Addproject";
+import Blogs from "./Pages/Blogs";
+import BlogsEdit from "./Pages/BlogsEdit";
+import Pagelist from "./Pages/Pagelist";
+import Categories from "./Pages/Categories";
 
 const RoutingApp = () => {
   return (
@@ -22,7 +21,7 @@ const RoutingApp = () => {
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/SkillsMangment" element={<SkillsMangment />} />
-        <Route path="/EditProject" element={<EditProject />} />
+        <Route path="/edit/:id" element={<EditProject />} /> {/* رابط التعديل */}
         <Route path="/Profile" element={<Profile />} />
         <Route path="/ChatScreen" element={<ChatScreen />} />
         <Route path="/Projectsmain" element={<Projectsmain />} />
@@ -32,9 +31,6 @@ const RoutingApp = () => {
         <Route path="/BlogsEdit" element={<BlogsEdit />} />
         <Route path="/Pagelist" element={<Pagelist />} />
         <Route path="/Categories" element={<Categories />} />
-
-
-
       </Routes>
     </BrowserRouter>
   );

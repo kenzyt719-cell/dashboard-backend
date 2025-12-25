@@ -1,6 +1,7 @@
 import React from "react";
-import edit from "../../Assets/edit.svg";
+import { Link } from "react-router-dom";
 import trash from "../../Assets/trash.svg";
+import edit from "../../Assets/edit.svg";
 import { supabase } from "../../supabase";
 import "./LineProjectEdit.css";
 
@@ -17,11 +18,8 @@ export default function LineProjectEdit({
       .delete()
       .eq("id", rowId);
 
-    if (error) {
-      console.error("Delete failed:", error);
-    } else {
-      console.log("Deleted successfully:", rowId);
-    }
+    if (error) console.error("Delete failed:", error);
+    else console.log("Deleted successfully:", rowId);
   }
 
   return (
@@ -32,7 +30,6 @@ export default function LineProjectEdit({
             status === "Published" ? "lpe-pub" : "lpe-unpub"
           }`}
         />
-
         <h5
           className={`lpe-status-text ${
             status === "Published" ? "lpe-pub-text" : "lpe-unpub-text"
@@ -42,11 +39,7 @@ export default function LineProjectEdit({
         </h5>
 
         <div className="lpe-image-box">
-          {image ? (
-            <img src={image} alt="preview" />
-          ) : (
-            <div className="lpe-no-image">No Image</div>
-          )}
+          {image ? <img src={image} alt="preview" /> : <div>No Image</div>}
         </div>
       </div>
 
@@ -55,9 +48,10 @@ export default function LineProjectEdit({
       <h4 className="lpe-line-desc">{description}</h4>
 
       <div className="lpe-actions">
-        <button className="lpe-btn-action">
+        {/* الرابط هنا يمرر الـ id */}
+        <Link to={`/edit/${id}`} className="lpe-btn-action">
           <img src={edit} alt="edit" />
-        </button>
+        </Link>
 
         <button
           onClick={() => deleteRow(id)}

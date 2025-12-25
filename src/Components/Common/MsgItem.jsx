@@ -14,7 +14,7 @@ const MsgItem = ({ id, name, title, preview, time, onDelete }) => {
       <span className="msg-preview">{preview}</span>
       <span className="msg-time">{time}</span>
 
-      {/* 🗑 DELETE */}
+  
       <img
         src={trash}
         alt="trash"
